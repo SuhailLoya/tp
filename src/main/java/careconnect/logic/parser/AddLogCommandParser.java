@@ -4,7 +4,6 @@ import static careconnect.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static java.util.Objects.requireNonNull;
 
 import java.util.Date;
-import java.util.stream.Stream;
 
 import careconnect.commons.core.index.Index;
 import careconnect.logic.Messages;

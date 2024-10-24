@@ -57,8 +57,8 @@ public class UntagCommand extends Command {
      * Creates and returns a {@code Person} with the details of {@code personToDeleteTag} and
      * deleted tag
      */
-    private static Person createPersonWithoutTag(Person personToDeleteTag, Tag tagToDelete)
-        throws CommandException {
+    private static Person createPersonWithoutTag(
+            Person personToDeleteTag, Tag tagToDelete) throws CommandException {
         requireAllNonNull(personToDeleteTag, tagToDelete);
 
         Name name = personToDeleteTag.getName();

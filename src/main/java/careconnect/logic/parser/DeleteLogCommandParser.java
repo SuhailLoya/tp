@@ -3,8 +3,6 @@ package careconnect.logic.parser;
 import static careconnect.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static java.util.Objects.requireNonNull;
 
-import java.util.stream.Stream;
-
 import careconnect.commons.core.index.Index;
 import careconnect.logic.commands.DeleteLogCommand;
 import careconnect.logic.parser.exceptions.ParseException;

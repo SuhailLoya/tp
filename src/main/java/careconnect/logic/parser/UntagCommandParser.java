@@ -4,7 +4,6 @@ import static careconnect.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static java.util.Objects.requireNonNull;
 
 import careconnect.commons.core.index.Index;
-import careconnect.logic.commands.TagCommand;
 import careconnect.logic.commands.UntagCommand;
 import careconnect.logic.parser.exceptions.ParseException;
 import careconnect.model.tag.Tag;
