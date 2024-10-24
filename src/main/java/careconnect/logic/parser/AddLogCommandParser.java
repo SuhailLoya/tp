@@ -19,15 +19,6 @@ import careconnect.model.log.Log;
 public class AddLogCommandParser implements Parser<AddLogCommand> {
 
     /**
-     * Returns true if none of the prefixes contains empty {@code Optional} values in the given
-     * {@code ArgumentMultimap}.
-     */
-    private static boolean arePrefixesPresent(ArgumentMultimap argumentMultimap,
-                                              Prefix... prefixes) {
-        return Stream.of(prefixes).allMatch(prefix -> argumentMultimap.getValue(prefix).isPresent());
-    }
-
-    /**
      * Parses the given {@code String} of arguments in the context of the AddLogCommand
      * and returns an AddLogCommand object for execution.
      *
@@ -47,7 +38,7 @@ public class AddLogCommandParser implements Parser<AddLogCommand> {
                     AddLogCommand.MESSAGE_USAGE), pe);
         }
 
-        if (!arePrefixesPresent(argMultimap, CliSyntax.PREFIX_REMARK)) {
+        if (!ParserUtil.arePrefixesPresent(argMultimap, CliSyntax.PREFIX_REMARK)) {
             throw new ParseException(String.format(Messages.MESSAGE_INVALID_COMMAND_FORMAT,
                     AddLogCommand.MESSAGE_USAGE));
         }

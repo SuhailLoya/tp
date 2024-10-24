@@ -15,15 +15,6 @@ import careconnect.logic.parser.exceptions.ParseException;
 public class DeleteLogCommandParser implements Parser<DeleteLogCommand> {
 
     /**
-     * Returns true if none of the prefixes contains empty {@code Optional} values in the given
-     * {@code ArgumentMultimap}.
-     */
-    private static boolean arePrefixesPresent(ArgumentMultimap argumentMultimap,
-                                              Prefix... prefixes) {
-        return Stream.of(prefixes).allMatch(prefix -> argumentMultimap.getValue(prefix).isPresent());
-    }
-
-    /**
      * Parses the given {@code String} of arguments in the context of the DeleteLogCommand
      * and returns a DeleteLogCommand object for execution.
      *
@@ -44,7 +35,7 @@ public class DeleteLogCommandParser implements Parser<DeleteLogCommand> {
                     pe);
         }
 
-        if (!arePrefixesPresent(argMultimap, CliSyntax.PREFIX_LOG_INDEX)) {
+        if (!ParserUtil.arePrefixesPresent(argMultimap, CliSyntax.PREFIX_LOG_INDEX)) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
                     DeleteLogCommand.MESSAGE_USAGE));
         }
